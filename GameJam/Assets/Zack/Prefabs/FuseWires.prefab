@@ -154,7 +154,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &1491063051934385407
 SphereCollider:
@@ -167,7 +167,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4089912809228454502
 MonoBehaviour:
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3dc7afe116e4afa97445e0209e2727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  section: {fileID: 11400000, guid: 3bffce30b85ec7d44ab284180d2ce9be, type: 2}
+  section: {fileID: 0}
   uvScale: {x: 1, y: 1}
   thickness: 0.025
 --- !u!1 &5044545480282174677
@@ -376,7 +376,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &9041652125210204759
 SphereCollider:
@@ -389,7 +389,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &221767688819475915
 MonoBehaviour:
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3dc7afe116e4afa97445e0209e2727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  section: {fileID: 11400000, guid: 3bffce30b85ec7d44ab284180d2ce9be, type: 2}
+  section: {fileID: 0}
   uvScale: {x: 1, y: 1}
   thickness: 0.025
 --- !u!1 &5044545480551266726
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3dc7afe116e4afa97445e0209e2727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  section: {fileID: 11400000, guid: 3bffce30b85ec7d44ab284180d2ce9be, type: 2}
+  section: {fileID: 0}
   uvScale: {x: 1, y: 1}
   thickness: 0.025
 --- !u!1 &5044545481223121363
@@ -831,7 +831,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &6764336630790559042
 SphereCollider:
@@ -844,7 +844,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1655169712220051094
 MonoBehaviour:
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3dc7afe116e4afa97445e0209e2727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  section: {fileID: 11400000, guid: 3bffce30b85ec7d44ab284180d2ce9be, type: 2}
+  section: {fileID: 0}
   uvScale: {x: 1, y: 1}
   thickness: 0.025
 --- !u!1 &5044545481807962235
@@ -1099,7 +1099,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &1487109670938241496
 SphereCollider:
@@ -1112,7 +1112,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &970183873283822537
 MonoBehaviour:

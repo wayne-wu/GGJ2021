@@ -22,7 +22,7 @@ public class PlayerInput : MonoBehaviour
     private void UpdateMouseDelta()
     {
         Vector3 mouseCurrentPos = Input.mousePosition;
-        m_mouseDelta = (mouseCurrentPos - m_previousMousePos) / 35f;
+        m_mouseDelta = (mouseCurrentPos - m_previousMousePos) / 50f;
         m_previousMousePos = mouseCurrentPos;
     }
 
@@ -55,7 +55,11 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetMouseButton(0) == false && m_selectedWire)
         {
-            m_selectedWire.GetComponent<Wire>().ToggleGravity(true);
+            Wire wire = m_selectedWire.GetComponent<Wire>();
+            if (wire.IsAttached == false)
+            {
+                wire.ToggleKinematic(false);    
+            }
             m_selectedWire = null;
             return;
         }
@@ -68,7 +72,8 @@ public class PlayerInput : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit, 10f, LayerMask.GetMask("Wire")))
             {
                 m_selectedWire = hit.collider.gameObject;
-                m_selectedWire.GetComponent<Wire>().ToggleGravity(false);
+                Wire wire = m_selectedWire.GetComponent<Wire>();
+                wire.ToggleKinematic(true);
             }
         }
     }
