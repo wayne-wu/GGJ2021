@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
+
 public class VisibleColorComponent : MonoBehaviour, IColorVisibiityMessageReciever
 {
     [SerializeField] VisibaleColorGroup colorGroup;
     [SerializeField] Material colorMaterial;
 
+    SpriteRenderer spriteRenderer;
+    bool isSpriteRenderer { get => spriteRenderer; }
     Color originColor;
 
     void Reset()
@@ -21,6 +24,14 @@ public class VisibleColorComponent : MonoBehaviour, IColorVisibiityMessageReciev
 
     void Awake()
     {
+        var renderer = GetComponentInChildren<Renderer>();
+        if (renderer)
+        {
+            if (renderer is SpriteRenderer)
+            {
+                spriteRenderer = (SpriteRenderer)renderer;
+            }
+        }
         if (colorMaterial)
         {
             originColor = colorMaterial.color;
@@ -42,9 +53,22 @@ public class VisibleColorComponent : MonoBehaviour, IColorVisibiityMessageReciev
         {
             ColorVisibility.RemoveReciever(this);
         }
-        if (colorMaterial)
+        ResetColor();
+
+    }
+
+    void ResetColor()
+    {
+        if (isSpriteRenderer)
         {
-            colorMaterial.color = originColor;
+            spriteRenderer.color = originColor;
+        }
+        else
+        {
+            if (colorMaterial)
+            {
+                colorMaterial.color = originColor;
+            }
         }
     }
 
@@ -60,6 +84,13 @@ public class VisibleColorComponent : MonoBehaviour, IColorVisibiityMessageReciev
     {
         var color = colorMaterial.color;
         color.a = visibility;
-        colorMaterial.color = color;
+        if (isSpriteRenderer)
+        {
+            spriteRenderer.color = color;
+        }
+        else
+        {
+            colorMaterial.color = color;
+        }
     }
 }
