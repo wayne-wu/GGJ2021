@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class CrawlingDrug : Interactable
+public class CrawlingDrug : Drug
 {
     public FirstPersonController controller;
     public CharacterController characterController;
@@ -11,11 +11,9 @@ public class CrawlingDrug : Interactable
     {
         controller = FindObjectOfType<FirstPersonController>();
         characterController = controller.GetComponent<CharacterController>();
-
     }
     public override void Use()
     {
-        base.Use();
         characterController.radius = 0f;
         characterController.height = 0.3f;
         controller.m_WalkSpeed = 0.5f;
@@ -24,7 +22,7 @@ public class CrawlingDrug : Interactable
         StartCoroutine(Recovery());
     }
 
-    public IEnumerator Recovery()
+    public override IEnumerator Recovery()
     {
         yield return new WaitForSeconds(10f);
         characterController.radius = 0.5f;
