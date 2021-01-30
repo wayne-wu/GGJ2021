@@ -16,7 +16,7 @@ public class Louise_Test : MonoBehaviour
     void Start()
     {
         volume = FindObjectOfType<Volume>();
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -38,15 +38,6 @@ public class Louise_Test : MonoBehaviour
             if (centerUI.gameObject.activeSelf)
             {
                 centerUI.gameObject.SetActive(false);
-            }
-        }
-
-        if (timerEffect > 0)
-        {
-            timerEffect -= Time.deltaTime;
-            if (timerEffect <= 0)
-            {
-                volume.sharedProfile = null;
             }
         }
     }
