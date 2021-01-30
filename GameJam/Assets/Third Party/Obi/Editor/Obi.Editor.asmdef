@@ -1,7 +1,7 @@
 {
     "name": "Obi.Editor",
     "references": [
-        "GUID:87957abdfae26c44a954d2f924b84e21"
+        "Obi"
     ],
     "includePlatforms": [
         "Editor"
