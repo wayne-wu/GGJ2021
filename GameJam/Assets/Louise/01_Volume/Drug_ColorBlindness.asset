@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Drug_ColorBlindness
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 3993348264114293838}
---- !u!114 &3993348264114293838
+  - {fileID: 64554204833599072}
+--- !u!114 &64554204833599072
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
