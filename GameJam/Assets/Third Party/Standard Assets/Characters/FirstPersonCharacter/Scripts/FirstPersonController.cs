@@ -10,9 +10,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+        [SerializeField] public float m_WalkSpeed;
+        [SerializeField] public float m_RunSpeed;
         [SerializeField] private bool m_IsWalking;
-        [SerializeField] private float m_WalkSpeed;
-        [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -28,6 +28,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        public bool isCrawling;
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -65,6 +66,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
+                if (isCrawling)
+                {
+                    return;
+                }
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
@@ -161,6 +166,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
+            {
+                return;
+            }
+            if (isCrawling)
             {
                 return;
             }

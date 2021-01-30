@@ -1,32 +1,66 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Rendering;
 
 public class Louise_Test : MonoBehaviour
 {
     public Volume volume;
-    //public VolumeProfile[] volumeProfiles;
-    public VolumeProfile volumeProfile;
-    public Transform volumeTrans;
+    public LayerMask interactable;
+    public Text centerUI;
+    public RaycastHit hit;
+    public float timerEffect;
+    public float touchDistence = 1;
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         volume = FindObjectOfType<Volume>();
-        volumeTrans = volume.GetComponent<Transform>();
-        //volume.sharedProfile
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, touchDistence, interactable))
         {
-            volumeTrans.position = transform.position;
+            if (!centerUI.gameObject.activeSelf)
+            {
+                EnableCenterUI(hit.collider.GetComponent<Interactable>().type);
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                hit.collider.GetComponent<Interactable>().Use();
+                //Destroy(hit.collider.gameObject);
+            }
         }
-        else if(Input.GetKeyDown(KeyCode.K))
-        { 
-            volume.sharedProfile = volumeProfile;
+        else
+        {
+            if (centerUI.gameObject.activeSelf)
+            {
+                centerUI.gameObject.SetActive(false);
+            }
         }
+
+        if (timerEffect > 0)
+        {
+            timerEffect -= Time.deltaTime;
+            if (timerEffect <= 0)
+            {
+                volume.sharedProfile = null;
+            }
+        }
+    }
+    void EnableCenterUI(intercatableType type)
+    {
+        switch (type)
+        {
+            case intercatableType.Drug: centerUI.text = "按E食用"; 
+                break;
+            case intercatableType.Switch: centerUI.text = "按E切換開關";
+                break;
+            case intercatableType.Openthing: centerUI.text = "按E開啟";
+                break;
+        }
+        centerUI.gameObject.SetActive(true);
     }
 }
