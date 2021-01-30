@@ -11,6 +11,7 @@ public class Wire : MonoBehaviour
 
     public void ToggleGravity(bool toggle)
     {
+        Debug.Log(toggle);
         m_rigidbody.useGravity = toggle;
     }
 }

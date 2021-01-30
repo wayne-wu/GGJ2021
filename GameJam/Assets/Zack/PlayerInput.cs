@@ -53,7 +53,7 @@ public class PlayerInput : MonoBehaviour
 
     private void SelectWire()
     {
-        if (Input.GetMouseButton(0) == false)
+        if (Input.GetMouseButton(0) == false && m_selectedWire)
         {
             m_selectedWire.GetComponent<Wire>().ToggleGravity(true);
             m_selectedWire = null;
