@@ -56,6 +56,7 @@ public class Louise_Test : MonoBehaviour
             case intercatableType.Openthing: centerUI.text = "按E開啟";
                 break;
             case intercatableType.CantOpenthing: centerUI.text = "2077年後才開啟";
+                break;
         }
         centerUI.gameObject.SetActive(true);
     }
