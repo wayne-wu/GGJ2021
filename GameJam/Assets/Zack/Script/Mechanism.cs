@@ -3,6 +3,12 @@
 public class Mechanism : MonoBehaviour
 {
     protected bool m_isClicked;
+    protected MechanismInput m_mechanismInput;
+
+    protected virtual void Awake()
+    {
+        m_mechanismInput = FindObjectOfType<MechanismInput>();
+    }
 
     public virtual void Click()
     {
@@ -12,7 +18,7 @@ public class Mechanism : MonoBehaviour
 
     public virtual void UnClick()
     {
-        m_isClicked = true;
+        m_isClicked = false;
         Debug.Log($"{gameObject.name} unclicked");
     }
 }

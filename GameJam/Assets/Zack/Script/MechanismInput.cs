@@ -28,16 +28,16 @@ public class MechanismInput : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * 20f, Color.blue);
         if (Physics.Raycast(ray, out RaycastHit hit, 10f, LayerMask.GetMask("Mechanism")) &&
             Input.GetMouseButton(0) &&
-            SelectedMechanism == null)
+            m_selectedMechanism == null)
         {
             m_selectedMechanism = hit.collider.GetComponent<Mechanism>();
-            SelectedMechanism.Click();
+            m_selectedMechanism.Click();
         }
         else if (Input.GetMouseButton(0) == false)
         {
-            if (SelectedMechanism != null)
+            if (m_selectedMechanism != null)
             {
-                SelectedMechanism.UnClick();
+                m_selectedMechanism.UnClick();
                 m_selectedMechanism = null;
             }
         }
