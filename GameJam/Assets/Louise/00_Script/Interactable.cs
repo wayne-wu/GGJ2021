@@ -6,6 +6,7 @@ public enum intercatableType
     Drug,
     Switch,
     Openthing,
+    CantOpenthing,
 
     Count
 }

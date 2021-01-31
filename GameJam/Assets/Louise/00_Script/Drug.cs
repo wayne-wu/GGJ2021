@@ -9,6 +9,9 @@ public class Drug : Interactable
     public Volume volume;
     public VolumeProfile volumeProfile;
     public Louise_Test louise_Test;
+    public bool buffDrug;
+    //ColorBlind,CrawlingDrug
+
     void Start()
     {
         volume = FindObjectOfType<Volume>();
@@ -17,12 +20,26 @@ public class Drug : Interactable
     public override void Use()
     {
         base.Use();
+        if (louise_Test.effectWork)
+        {
+            return;
+        }
         volume.sharedProfile = volumeProfile;
-        StartCoroutine(Recovery());
+        louise_Test.effectWork = true;
+        if (buffDrug)
+        {
+            Destroy(gameObject);
+            louise_Test.effectWork = false;
+        }
+        else
+        { 
+            StartCoroutine(Recovery());
+        }
     }
     public virtual IEnumerator Recovery()
     {
         yield return new WaitForSeconds(10f);
         volume.sharedProfile = null;
+        louise_Test.effectWork = false;
     }
 }
