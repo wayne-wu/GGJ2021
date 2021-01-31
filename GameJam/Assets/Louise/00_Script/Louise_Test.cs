@@ -14,11 +14,14 @@ public class Louise_Test : MonoBehaviour
     public float touchDistence = 1;
     public bool effectWork;
     public AudioSource audioSource;
+    public AudioListener audioListener;
 
     void Start()
     {
         volume = FindObjectOfType<Volume>();
         audioSource = FindObjectOfType<AudioSource>();
+        audioListener = FindObjectOfType<AudioListener>();
+        audioListener.enabled = false;
         audioSource.mute = true;
         //Cursor.visible = true;
         //Cursor.lockState = CursorLockMode.Locked;
@@ -44,7 +47,6 @@ public class Louise_Test : MonoBehaviour
                 { 
                     hit.collider.GetComponent<Interactable>().Use();
                 }
-                //Destroy(hit.collider.gameObject);
             }
         }
         else

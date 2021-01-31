@@ -11,11 +11,11 @@ public class CrawlingDrug : Drug
     {
         controller = FindObjectOfType<FirstPersonController>();
         characterController = controller.GetComponent<CharacterController>();
-        //characterController.radius = 0f;
-        //characterController.height = 0.3f;
-        //controller.m_WalkSpeed = 0.5f;
-        //controller.m_RunSpeed = 0.5f;
-        //controller.isCrawling = true;
+        characterController.radius = 0f;
+        characterController.height = 0.3f;
+        controller.m_WalkSpeed = 0.5f;
+        controller.m_RunSpeed = 0.5f;
+        controller.isCrawling = true;
     }
     public override void Use()
     {
