@@ -19,7 +19,7 @@ public class Louise_Test : MonoBehaviour
     {
         volume = FindObjectOfType<Volume>();
         audioSource = FindObjectOfType<AudioSource>();
-        //audioSource.mute = true;
+        audioSource.mute = true;
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -33,7 +33,14 @@ public class Louise_Test : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
-                hit.collider.GetComponent<Interactable>().Use();
+                if (effectWork)
+                {
+                    centerUI.text = "等藥效後再吃不然我會High到爆";
+                }
+                else
+                { 
+                    hit.collider.GetComponent<Interactable>().Use();
+                }
                 //Destroy(hit.collider.gameObject);
             }
         }
