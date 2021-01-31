@@ -4,10 +4,38 @@ using UnityEngine;
 
 public class AmbienceSoundController : MonoBehaviour
 {
+    public static AmbienceSoundController Instance { get; private set; }
+
     [SerializeField] AudioSource loopSource;
 
     [SerializeField] AudioSource randomSource;
     [SerializeField] AudioClip[] audioClips;
+
+    void Awake()
+    {
+        var instances = FindObjectsOfType<AmbienceSoundController>();
+        if (instances.Length > 1)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+    public void UnMute()
+    {
+        if (loopSource && randomSource)
+        {
+            loopSource.Stop();
+            randomSource.Stop();
+            loopSource.mute = false;
+            randomSource.mute = false;
+            PlayLoop();
+            PlayRandom();
+        }
+    }
 
     void OnEnable()
     {
