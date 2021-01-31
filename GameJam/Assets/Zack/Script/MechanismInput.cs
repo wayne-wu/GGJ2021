@@ -24,7 +24,7 @@ public class MechanismInput : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.blue);
+        Debug.DrawRay(ray.origin, ray.direction * 20f, Color.blue);
         if (Physics.Raycast(ray, out RaycastHit hit, 10f, LayerMask.GetMask("Mechanism")) &&
             Input.GetMouseButton(0) &&
             m_selectedMechanism == null)
@@ -32,7 +32,7 @@ public class MechanismInput : MonoBehaviour
             m_selectedMechanism = hit.collider.GetComponent<Mechanism>();
             m_selectedMechanism.Click();
         }
-        else if(Input.GetMouseButton(0) == false)
+        else if (Input.GetMouseButton(0) == false)
         {
             if (m_selectedMechanism != null)
             {

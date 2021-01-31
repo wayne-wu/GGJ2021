@@ -245,7 +245,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if (Input.GetMouseButton(1))
             {
-                m_MouseLook.LookRotation (transform, m_Camera.transform);       
+                m_MouseLook.LookRotation(transform, m_Camera.transform);
             }
         }
 
