@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class CreepyFollow : MonoBehaviour
 {
     public Transform target;
+    public GameObject deathScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class CreepyFollow : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
-            SceneManager.LoadScene("Death");
+            deathScreen.SetActive(true);
     }
 
 }
