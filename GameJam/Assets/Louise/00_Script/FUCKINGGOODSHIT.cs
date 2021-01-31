@@ -32,6 +32,10 @@ public class FUCKINGGOODSHIT : Drug
         AudioSource brainPower = a.AddComponent<AudioSource>();
         brainPower.PlayOneShot(BRAINPOWER);
         StartCoroutine(Recovery());
+
+        //Hayluu for ambience
+        if (AmbienceSoundController.Instance)
+            AmbienceSoundController.Instance.UnMute();
     }
     public override IEnumerator Recovery()
     {
