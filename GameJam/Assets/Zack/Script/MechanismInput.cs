@@ -6,6 +6,7 @@ public class MechanismInput : MonoBehaviour
     private Vector3 m_mouseDelta;
     private Vector3 m_previousMousePos;
     public Vector3 MouseDelta => m_mouseDelta;
+    public Mechanism SelectedMechanism => m_selectedMechanism;
 
     private void Update()
     {
@@ -16,7 +17,7 @@ public class MechanismInput : MonoBehaviour
     private void UpdateMouseDelta()
     {
         Vector3 mouseCurrentPos = Input.mousePosition;
-        m_mouseDelta = (mouseCurrentPos - m_previousMousePos) / 50f;
+        m_mouseDelta = (mouseCurrentPos - m_previousMousePos) / 100f;
         m_previousMousePos = mouseCurrentPos;
     }
     
@@ -26,8 +27,7 @@ public class MechanismInput : MonoBehaviour
 
         Debug.DrawRay(ray.origin, ray.direction * 20f, Color.blue);
         if (Physics.Raycast(ray, out RaycastHit hit, 10f, LayerMask.GetMask("Mechanism")) &&
-            Input.GetMouseButton(0) &&
-            m_selectedMechanism == null)
+            Input.GetMouseButton(0) && m_selectedMechanism == null)
         {
             m_selectedMechanism = hit.collider.GetComponent<Mechanism>();
             m_selectedMechanism.Click();

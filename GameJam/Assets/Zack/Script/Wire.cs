@@ -5,8 +5,6 @@ public class Wire : Mechanism
     #region Non-serialized Fields
 
     private Rigidbody m_rigidbody;
-    private bool m_isClicked;
-    private MechanismInput m_mechanismInput;
 
     #endregion
 
@@ -18,17 +16,17 @@ public class Wire : Mechanism
 
     #region Unity Event Functions
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         m_rigidbody = GetComponent<Rigidbody>();
-        m_mechanismInput = FindObjectOfType<MechanismInput>();
     }
 
     private void Update()
     {
         if (m_isClicked)
         {
-            MoveWire();       
+            MoveWire();
         }
     }
 
@@ -47,22 +45,22 @@ public class Wire : Mechanism
 
     private void MoveWire()
     {
-        //if (!Input.GetMouseButton(0))
-        //{
-        //    ToggleCursor(true);
-        //    return;
-        //}
+        // if (!Input.GetMouseButton(0))
+        // {
+        //     ToggleCursor(true);
+        //     return;
+        // }
 
         Vector3 wireWorldDelta = transform.TransformPoint(m_mechanismInput.MouseDelta);
         transform.position = wireWorldDelta;
-        //ToggleCursor(false);
+        
+        // ToggleCursor(false);
     }
 
     public override void Click()
     {
         base.Click();
         ToggleKinematic(true);
-        m_isClicked = true;
     }
 
     public override void UnClick()
@@ -72,8 +70,6 @@ public class Wire : Mechanism
         {
             ToggleKinematic(false);    
         }
-        m_isClicked = false;
-        
     }
 
     private static void ToggleCursor(bool toggle)
