@@ -6,9 +6,10 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(Rigidbody),typeof(BoxCollider))]
 public class Drug : Interactable
 {
-    public Volume volume;
+    protected Volume volume;
     public VolumeProfile volumeProfile;
-    public Louise_Test louise_Test;
+    protected Louise_Test louise_Test;
+    public VolumeProfile onlyColorBlnd;
     public bool buffDrug;
     //ColorBlind,CrawlingDrug
 
@@ -19,11 +20,11 @@ public class Drug : Interactable
     }
     public override void Use()
     {
-        base.Use();
         if (louise_Test.effectWork)
         {
             return;
         }
+        base.Use();
         volume.sharedProfile = volumeProfile;
         louise_Test.effectWork = true;
         if (buffDrug)
@@ -39,7 +40,7 @@ public class Drug : Interactable
     public virtual IEnumerator Recovery()
     {
         yield return new WaitForSeconds(10f);
-        volume.sharedProfile = null;
+        volume.sharedProfile = onlyColorBlnd;
         louise_Test.effectWork = false;
     }
 }

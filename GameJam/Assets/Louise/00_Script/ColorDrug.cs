@@ -14,6 +14,7 @@ public class ColorDrug : Drug
     {
         yield return new WaitForSeconds(10f);
         ColorVisibility.Instance.SetVisibility(colorGroup, 0f);
+        volume.sharedProfile = onlyColorBlnd;
         louise_Test.effectWork = false;
     }
 }
