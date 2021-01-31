@@ -5,7 +5,6 @@ public class Wire : Mechanism
     #region Non-serialized Fields
 
     private Rigidbody m_rigidbody;
-    private bool m_isClicked;
     private MechanismInput m_mechanismInput;
 
     #endregion
@@ -28,7 +27,7 @@ public class Wire : Mechanism
     {
         if (m_isClicked)
         {
-            MoveWire();       
+            MoveWire();
         }
     }
 
@@ -47,7 +46,7 @@ public class Wire : Mechanism
 
     private void MoveWire()
     {
-        if (!Input.GetMouseButton(0))
+        if (!Input.GetMouseButton(0) || m_mechanismInput.SelectedMechanism != this)
         {
             ToggleCursor(true);
             return;
@@ -62,7 +61,6 @@ public class Wire : Mechanism
     {
         base.Click();
         ToggleKinematic(true);
-        m_isClicked = true;
     }
 
     public override void UnClick()
@@ -72,8 +70,6 @@ public class Wire : Mechanism
         {
             ToggleKinematic(false);    
         }
-        m_isClicked = false;
-        
     }
 
     private static void ToggleCursor(bool toggle)
