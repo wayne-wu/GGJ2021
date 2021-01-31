@@ -27,6 +27,10 @@ public class FUCKINGGOODSHIT : Drug
         }
         meshRenderer.enabled = false;
         louise_Test.audioListener.enabled = true;
+        GameObject a = new GameObject();
+         
+        AudioSource brainPower = a.AddComponent<AudioSource>();
+        brainPower.PlayOneShot(BRAINPOWER);
         StartCoroutine(Recovery());
     }
     public override IEnumerator Recovery()
