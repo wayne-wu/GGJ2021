@@ -11,12 +11,14 @@ public class Drug : Interactable
     protected Louise_Test louise_Test;
     public VolumeProfile onlyColorBlnd;
     public bool buffDrug;
+    public MeshRenderer meshRenderer;
     //ColorBlind,CrawlingDrug
 
-    void Start()
+    protected virtual void Start()
     {
         volume = FindObjectOfType<Volume>();
         louise_Test = FindObjectOfType<Louise_Test>();
+        meshRenderer = GetComponent<MeshRenderer>();
     }
     public override void Use()
     {
@@ -29,7 +31,7 @@ public class Drug : Interactable
         louise_Test.effectWork = true;
         if (buffDrug)
         {
-            Destroy(gameObject);
+            meshRenderer.enabled = false;
             louise_Test.effectWork = false;
         }
         else
