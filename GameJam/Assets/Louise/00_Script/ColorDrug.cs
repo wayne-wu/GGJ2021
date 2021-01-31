@@ -14,5 +14,6 @@ public class ColorDrug : Drug
     {
         yield return new WaitForSeconds(10f);
         ColorVisibility.Instance.SetVisibility(colorGroup, 0f);
+        louise_Test.effectWork = false;
     }
 }

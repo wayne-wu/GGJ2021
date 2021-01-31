@@ -683,6 +683,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: a10de9ac82f61e54fa6918ef6254387d, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &190756717
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -976,6 +977,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: b8f466cae49d4264eaea0e32f885fd64, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &243611715
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1104,6 +1106,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: 38751f3b13dfa974baba858463d221f2, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &296045658
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1445,6 +1448,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: ebe0132c90e8357459e8da533f4634b4, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &365717050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1572,6 +1576,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: 641d489b402d35e4c8d785effd0e07de, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &374503564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2457,6 +2462,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: 8ad4860bd435527479112f8f3a53dfaa, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &575865565
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3010,6 +3016,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 80456100, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: centerUI
+      value: 
+      objectReference: {fileID: 923386105}
     - target: {fileID: 1301323805, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: centerUI
       value: 
@@ -3826,6 +3836,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: 5a27ec7616d2b84459bbe807cd7a5245, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &957661128
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4589,6 +4600,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: e856a092ba33c024abdfbbef234371f2, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &1318446070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4788,6 +4800,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: 97b8dfc4c1c0cda4789475060836e9de, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &1337795489
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5242,6 +5255,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 0}
   louise_Test: {fileID: 0}
+  buffDrug: 0
   controller: {fileID: 0}
   characterController: {fileID: 0}
 --- !u!54 &1505076934
@@ -6902,6 +6916,7 @@ MonoBehaviour:
   volume: {fileID: 0}
   volumeProfile: {fileID: 11400000, guid: 722f813243376f3439d6f233f20e4168, type: 2}
   louise_Test: {fileID: 0}
+  buffDrug: 0
 --- !u!54 &1899580942
 Rigidbody:
   m_ObjectHideFlags: 0

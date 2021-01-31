@@ -21,6 +21,7 @@ public class WireSocket : MonoBehaviour
         if (m_targetWire == other.gameObject)
         {
             Debug.Log($"{m_targetWire} Success!");
+            m_targetWire.GetComponent<Wire>().IsAttached = true;
             OnWireConnected.Invoke();
             m_fuseBox.IncrementCorrectCount();
             other.enabled = false;

@@ -12,10 +12,14 @@ public class Louise_Test : MonoBehaviour
     public RaycastHit hit;
     public float timerEffect;
     public float touchDistence = 1;
+    public bool effectWork;
+    public AudioSource audioSource;
 
     void Start()
     {
         volume = FindObjectOfType<Volume>();
+        audioSource = FindObjectOfType<AudioSource>();
+        //audioSource.mute = true;
         //Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -51,6 +55,7 @@ public class Louise_Test : MonoBehaviour
                 break;
             case intercatableType.Openthing: centerUI.text = "按E開啟";
                 break;
+            case intercatableType.CantOpenthing: centerUI.text = "2077年後才開啟";
         }
         centerUI.gameObject.SetActive(true);
     }

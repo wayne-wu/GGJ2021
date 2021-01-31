@@ -3,14 +3,15 @@
 public class Wire : MonoBehaviour
 {
     private Rigidbody m_rigidbody;
+    public bool IsAttached { get; set; }
     
     private void Awake()
     {
         m_rigidbody = GetComponent<Rigidbody>();
     }
 
-    public void ToggleGravity(bool toggle)
+    public void ToggleKinematic(bool toggle)
     {
-        m_rigidbody.useGravity = toggle;
+        m_rigidbody.isKinematic = toggle;
     }
 }
