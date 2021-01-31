@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: sidetable_MAT
-    second: {fileID: 2100000, guid: ea9be4074714373448ef5b014f033411, type: 2}
+    second: {fileID: 2100000, guid: da4bf422a76d66d4b92851687a18eeed, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

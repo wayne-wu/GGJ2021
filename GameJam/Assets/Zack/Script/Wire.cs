@@ -46,15 +46,15 @@ public class Wire : Mechanism
 
     private void MoveWire()
     {
-        if (!Input.GetMouseButton(0) || m_mechanismInput.SelectedMechanism != this)
-        {
-            ToggleCursor(true);
-            return;
-        }
+        //if (!Input.GetMouseButton(0))
+        //{
+        //    ToggleCursor(true);
+        //    return;
+        //}
 
         Vector3 wireWorldDelta = transform.TransformPoint(m_mechanismInput.MouseDelta);
         transform.position = wireWorldDelta;
-        ToggleCursor(false);
+        //ToggleCursor(false);
     }
 
     public override void Click()
