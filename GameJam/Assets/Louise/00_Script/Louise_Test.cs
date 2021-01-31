@@ -15,6 +15,8 @@ public class Louise_Test : MonoBehaviour
     public bool effectWork;
     public AudioSource audioSource;
     public AudioListener audioListener;
+    public Image successScreen;
+    public bool isSuccess;
 
     void Start()
     {
@@ -55,6 +57,10 @@ public class Louise_Test : MonoBehaviour
             {
                 centerUI.gameObject.SetActive(false);
             }
+        }
+        if (isSuccess)
+        {
+            successScreen.gameObject.SetActive(true);
         }
     }
     void EnableCenterUI(intercatableType type)
