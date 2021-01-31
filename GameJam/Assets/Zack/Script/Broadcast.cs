@@ -5,6 +5,7 @@ public class Broadcast : MonoBehaviour
 {
     [SerializeField] private AudioSource m_audioSource;
     [SerializeField] private AudioClip[] m_clips;
+    public bool KeepBroadcast { get; set; } = true;
 
     private void Start()
     {
@@ -22,6 +23,11 @@ public class Broadcast : MonoBehaviour
             }
         
             yield return new WaitForSeconds(6f);
+
+            if (KeepBroadcast == false)
+            {
+                break;
+            }
         }
     }
 }

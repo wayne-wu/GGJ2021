@@ -9,12 +9,15 @@ public class Password : MonoBehaviour
     [SerializeField] private UnityEvent OnFail;
     [SerializeField] private UnityEvent OnSuccess;
     [SerializeField] private LampSwitcher[] m_lampSwitchers;
+    [SerializeField] private Broadcast m_broadcast;
+    public Louise_Test louise;
     
     private List<int> m_currentPressSequence;
 
     private void Awake()
     {
         m_currentPressSequence = new List<int>();
+        louise = FindObjectOfType<Louise_Test>();
     }
 
     public void PressNumber(int number)
@@ -52,7 +55,9 @@ public class Password : MonoBehaviour
 
         TurnAllLampsSuccess();
         OnSuccess.Invoke();
+        m_broadcast.KeepBroadcast = false;
         Debug.Log("Password success!");
+        louise.isSuccess = true;
         return true;
     }
 
