@@ -29,21 +29,19 @@ public class AmbienceSoundController : MonoBehaviour
 
     void PlayRandom()
     {
-        if (randomSource.mute)
+        if (!randomSource.mute)
         {
-            randomSource.mute = false;
+            randomSource.Play();
         }
-        randomSource.Play();
         StartCoroutine(WaitForStop(randomSource, () => { StartCoroutine(WaitForRandomTime(false, ()=> { SwitchClip(); PlayRandom(); })); }));
     }
 
     void PlayLoop()
     {
-        if (loopSource.mute)
+        if (!loopSource.mute)
         {
-            loopSource.mute = false;
+            loopSource.Play();
         }
-        loopSource.Play();
         StartCoroutine(WaitForStop(loopSource, () => { StartCoroutine(WaitForRandomTime( true, () => { SwitchClip(); PlayLoop(); })); }));
     }
 
@@ -51,7 +49,7 @@ public class AmbienceSoundController : MonoBehaviour
     {
         while (true)
         {
-            if (!source || !source.isPlaying)
+            if (!source.isPlaying && !source.mute)
                 break;
             yield return null;
         }
